@@ -115,7 +115,7 @@ class DetectionHead(nn.Module):
             if args.return_poly_bbox:
                 binary = np.zeros(label.shape, dtype='uint8')
                 binary[ind] = 1
-                _, contours, _ = cv2.findContours(
+                contours, _ = cv2.findContours(
                     binary,
                     cv2.RETR_EXTERNAL,
                     cv2.CHAIN_APPROX_SIMPLE)
